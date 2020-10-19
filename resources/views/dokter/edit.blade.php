@@ -35,6 +35,10 @@
 		    <label for="exampleInputEmail1">Spesialis</label>
 		    <input name="spesialis"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Spesialis" value="{{$dokter->spesialis}}">
 		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Status</label>
+		    <input name="status_dokter"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Status" value="{{$dokter->status_dokter}}">
+		  </div>
 		          <button type="submit" class="btn btn-warning">Update</button>
         </form>
         </div>

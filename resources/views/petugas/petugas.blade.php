@@ -10,39 +10,37 @@
 			<div class="col-6">
 				<br>
 				<br>
-				<h2>Data Dokter</h2>
+				<h2>Data Petugas</h2>
 			</div>
 			<div class="col-6">
 				<!-- Button trigger modal -->
 				<br>
 				<button type="button" class="btn btn-primary btn-sm float-right"  data-toggle="modal" data-target="#exampleModal">
-				  Tambah Data Dokter
+				  Tambah Data Petugas
 				</button>
 			</div>
 			
 				<table class='table table-hover'>
 					<tr>
-						<th>ID DOKTER</th>
+						<th>ID PETUGAS</th>
 						<th>NAMA LENGKAP</th>
 						<th>ALAMAT</th>
 						<th>KOTA TINGGAL</th>
 						<th>NO TELEPON</th>
-						<th>SPESIALIS</th>
 						<th>STATUS</th>
 						<th>TOOLS</th>
 					</tr>
-					@foreach($data_dokter as $dokter)
+					@foreach($data_petugas as $petugas)
 					<tr>
-						<td>{{$dokter->id_dokter}}</td>
-						<td>{{$dokter->nama_dokter}}</td>
-						<td>{{$dokter->alamat}}</td>
-						<td>{{$dokter->kota_tinggal}}</td>
-						<td>{{$dokter->no_telp}}</td>
-						<td>{{$dokter->spesialis}}</td>
-						<td>{{$dokter->status_dokter}}</td>
+						<td>{{$petugas->id_petugas}}</td>
+						<td>{{$petugas->nama_petugas}}</td>
+						<td>{{$petugas->alamat_petugas}}</td>
+						<td>{{$petugas->kota_petugas}}</td>
+						<td>{{$petugas->notelp_petugas}}</td>
+						<td>{{$petugas->status_petugas}}</td>
 						<td>
-							<a href="/dokter/{{$dokter->id_dokter}}/edit" class="btn btn-warning btn-sm">Edit</a>
-							<a href="/dokter/{{$dokter->id_dokter}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin?')">Hapus</a>
+							<a href="/petugas/{{$petugas->id_petugas}}/edit" class="btn btn-warning btn-sm">Edit</a>
+							<a href="/petugas/{{$petugas->id_petugas}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin?')">Hapus</a>
 						</td>
 					</tr>
 				@endforeach
@@ -54,42 +52,38 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Form Pengisian Data Dokter</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Form Pengisian Data Petugas</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <!--small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small -->
       <div class="modal-body">
-        <form action="/dokter/create" method="POST">
+        <form action="/petugas/create" method="POST">
         	{{csrf_field()}}
 		   <div class="form-group">
-		    <label for="exampleInputEmail1">ID Dokter</label>
-		    <input name="id_dokter" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan ID Dokter">
+		    <label for="exampleInputEmail1">ID Petugas</label>
+		    <input name="id_petugas" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan ID Petugas">
 		  </div>  
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Nama Lengkap</label>
-		    <input name="nama_dokter"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Nama Lengkap">
+		    <input name="nama_petugas"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Nama Lengkap">
 		  </div>
 		  <div class="form-group">
 		    <label for="exampleFormControlTextarea1">Alamat</label>
-		    <textarea name="alamat"class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+		    <textarea name="alamat_petugas"class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 		  </div>
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Kota</label>
-		    <input name="kota_tinggal"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Kota">
+		    <input name="kota_petugas"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Kota">
 		  </div>
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Nomor Telepon</label>
-		    <input name="no_telp" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Nomor Telepon">
-		  </div>
-		  <div class="form-group">
-		    <label for="exampleInputEmail1">Spesialis</label>
-		    <input name="spesialis"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Spesialis">
+		    <input name="notelp_petugas" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Nomor Telepon">
 		  </div>
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Status</label>
-		    <input name="status_dokter"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Status">
+		    <input name="status_petugas" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Status">
 		  </div>
 		
       </div>

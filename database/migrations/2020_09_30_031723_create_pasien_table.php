@@ -18,12 +18,13 @@ class CreatePasienTable extends Migration
             $table->string('nama_pasien', 100);
             $table->date('tgl_lahir');
             $table->string('tempat_lahir', 50);
-            $table->string('jk_pasien', 1);
+            $table->char('jk_pasien', 1);
             $table->string('alamat_pasien', 100);
             $table->string('kota_pasien', 50);
             $table->string('notelp_pasien', 15);
             $table->string('pekerjaan', 50);
             $table->string('status_pasien', 12);
+            
         });
     }
 
