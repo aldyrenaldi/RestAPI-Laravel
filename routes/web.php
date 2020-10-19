@@ -40,8 +40,7 @@ Route::post('obat/create','ObatController@create');
 Route::get('/obat/{id_obat}/edit', 'ObatController@edit');
 Route::post('/obat/{id_obat}/update', 'ObatController@update');
 Route::get('/obat/{id_obat}/delete', 'ObatController@delete');
-
-
+ 
 Route::get('/rekammedis', 'RekamMedisController@index');
 Route::post('rekammedis/create','RekamMedisController@create');
 Route::get('/rekammedis/{id_rekammedis}/edit', 'RekamMedisController@edit');
@@ -53,3 +52,4 @@ Route::post('resepobat/create','ResepObatController@create');
 Route::get('/resepobat/{id_resep}/edit', 'ResepObatController@edit');
 Route::post('/resepobat/{id_resep}/update', 'ResepObatController@update');
 Route::get('/resepobat/{id_resep}/delete', 'ResepObatController@delete');
+ 
