@@ -1,6 +1,13 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
+<div class="container">
+    	<div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header"></div>
+
+                <div class="card-body">
 		@if(session('sukses'))
 			<div class="alert alert-success" role="alert">
 	  		 {{session('sukses')}}
@@ -20,7 +27,7 @@
 				</button>
 			</div>
 			
-				<table class='table table-hover'>
+				<table class='table table-hover' class="float-left">
 					<tr>
 						<th>ID PASIEN</th>
 						<th>NAMA LENGKAP</th>
@@ -53,6 +60,11 @@
 				</table>
 		</div>
 	</div>
+	</div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -63,14 +75,11 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <!--small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small -->
+ 
       <div class="modal-body">
         <form action="/pasien/create" method="POST">
         	{{csrf_field()}}
-		   <div class="form-group">
-		    <label for="exampleInputEmail1">ID Pasien</label>
-		    <input name="id_pasien" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan ID Pasien">
-		  </div>  
+		    
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Nama Lengkap</label>
 		    <input name="nama_pasien"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Nama Lengkap">
@@ -83,13 +92,6 @@
 		    <label for="exampleInputEmail1">Tempat Lahir</label>
 		    <input name="tempat_lahir" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Tempat Lahir">
 		  </div>
-<!--		  <div class="form-group">
-		    <label for="exampleFormControlSelect1">Jenis Kelamin</label>
-		    <select name="jk_pasien"class="form-control" id="exampleFormControlSelect1">
-		      <option value="L">L</option>
-		      <option value="P">P</option>
-		    </select>
-		  </div> -->
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Jenis Kelamin</label>
 		    <input name="jk_pasien"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Jenis Kelamin" >

@@ -1,6 +1,6 @@
-@extends('layouts.master')
+@extends('layouts.body')
 
-@section('content')
+@section('konten')
 		<h1>Edit Data Petugas</h1>
 		@if(session('sukses'))
 			<div class="alert alert-success" role="alert">
@@ -13,7 +13,7 @@
         	{{csrf_field()}}
 		   <div class="form-group">
 		    <label for="exampleInputEmail1">ID Petugas</label>
-		    <input name="id_petugas" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan ID Petugas" value="{{$petugas->id_petugas}}">
+		    <input name="id_petugas" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan ID Petugas" value="{{$petugas->id_petugas}}" readonly="">
 		  </div>  
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Nama Lengkap</label>

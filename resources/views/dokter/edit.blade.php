@@ -1,19 +1,19 @@
-@extends('layouts.master')
+@extends('layouts.body')
 
-@section('content')
-		<h1>Edit Data Dokter</h1>
+@section('konten')
+		<h2>Edit Data Dokter</h2>
 		@if(session('sukses'))
 			<div class="alert alert-success" role="alert">
 	  		 {{session('sukses')}}
 			</div>
 		@endif
 		<div class="row">
-			 <div class="col-lg-12">  
+			 <div class="col-lg-6">  
 			 <form action="/dokter/{{$dokter->id_dokter}}/update" method="POST">
         	{{csrf_field()}}
 		   <div class="form-group">
 		    <label for="exampleInputEmail1">ID Dokter</label>
-		    <input name="id_dokter" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan ID Dokter" value="{{$dokter->id_dokter}}">
+		    <input name="id_dokter" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan ID Dokter" value="{{$dokter->id_dokter}}" readonly="">
 		  </div>  
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Nama Lengkap</label>

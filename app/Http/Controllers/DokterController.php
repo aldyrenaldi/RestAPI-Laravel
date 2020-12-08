@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DokterController extends Controller
 {
@@ -33,5 +34,6 @@ class DokterController extends Controller
 		$dokter -> delete($dokter);
 		return redirect('/dokter')->with('sukses', 'Data berhasil dihapus');;
 	}
+	
 }
 

@@ -1,6 +1,6 @@
-@extends('layouts.master')
+@extends('layouts.body')
 
-@section('content')
+@section('konten')
 		<h1>Edit Data Resep</h1>
 		@if(session('sukses'))
 			<div class="alert alert-success" role="alert">
@@ -13,15 +13,25 @@
         	{{csrf_field()}}
 		   <div class="form-group">
 		    <label for="exampleInputEmail1">ID Resep</label>
-		    <input name="id_resep" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan ID Resep Obat" value="{{$resepobat->id_resep}}">
+		    <input name="id_resep" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan ID Resep Obat" value="{{$resepobat->id_resep}}" readonly="">
 		  </div>  
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">ID Rekam Medis</label>
-		    <input name="id_rekammedis"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan ID Rekam Medis" value="{{$resepobat->id_rekammedis}}">
+		    <select class="form-control" name="id_rekammedis">
+		    	<option value="">Pilih Rekam Medis</option>
+		    	@foreach($rekammedis as $rm )
+		    	<option value="{{$rm->id_rekammedis}}" selected> {{$rm->id_rekammedis}}</option>
+		    	@endforeach
+		    </select>
 		  </div>
 		 <div class="form-group">
 		    <label for="exampleInputEmail1">ID Obat</label>
-		    <input name="id_obat"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan ID Obat" value="{{$resepobat->id_obat}}">
+		    <select class="form-control" name="id_obat">
+		    	<option value="">Pilih Obat</option>
+		    	@foreach($obat as $o )
+		    	<option value="{{$o->id_obat}}" selected> {{$o->nama_obat}}</option>
+		    	@endforeach
+		    </select>
 		  </div>
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Jumlah</label>

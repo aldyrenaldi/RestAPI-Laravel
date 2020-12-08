@@ -1,6 +1,13 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
+<div class="container">
+    	<div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header"></div>
+
+                <div class="card-body">
 		@if(session('sukses'))
 			<div class="alert alert-success" role="alert">
 	  		 {{session('sukses')}}
@@ -47,6 +54,11 @@
 				</table>
 		</div>
 	</div>
+	</div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -61,10 +73,7 @@
       <div class="modal-body">
         <form action="/obat/create" method="POST">
         	{{csrf_field()}}
-		   <div class="form-group">
-		    <label for="exampleInputEmail1">ID OBAT</label>
-		    <input name="id_obat" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan ID Obat">
-		  </div>  
+		    
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Kategori Obat</label>
 		    <input name="kategori_obat"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Kategori Obat">

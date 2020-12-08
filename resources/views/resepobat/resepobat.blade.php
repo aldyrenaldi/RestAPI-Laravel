@@ -1,7 +1,15 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
-		@if(session('sukses'))
+<div class="container">
+    	<div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header"></div>
+
+                <div class="card-body">
+ 
+                    @if(session('sukses'))
 			<div class="alert alert-success" role="alert">
 	  		 {{session('sukses')}}
 			</div>
@@ -32,7 +40,7 @@
 					<tr>
 						<td>{{$resepobat->id_resep}}</td>
 						<td>{{$resepobat->id_rekammedis}}</td>
-						<td>{{$resepobat->id_obat}}</td>
+						<td>{{$resepobat->obat->nama_obat}}</td>
 						<td>{{$resepobat->jumlah}}</td>
 						<td>
 							<a href="/resepobat/{{$resepobat->id_resep}}/edit" class="btn btn-warning btn-sm">Edit</a>
@@ -43,6 +51,11 @@
 				</table>
 		</div>
 	</div>
+	</div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -57,21 +70,28 @@
       <div class="modal-body">
         <form action="/resepobat/create" method="POST">
         	{{csrf_field()}}
-		   <div class="form-group">
-		    <label for="exampleInputEmail1">ID Resep</label>
-		    <input name="id_resep" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan ID Resep Obat">
-		  </div>  
+		   
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">ID Rekam Medis</label>
-		    <input name="id_rekammedis"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan ID Rekam Medis">
+		    <select class="form-control" name="id_rekammedis">
+		    	<option value="">Pilih Rekam Medis</option>
+		    	@foreach($rekammedis as $rm )
+		    	<option value="{{$rm->id_rekammedis}}"> {{$rm->id_rekammedis}}</option>
+		    	@endforeach
+		    </select>
 		  </div>
 		 <div class="form-group">
 		    <label for="exampleInputEmail1">ID Obat</label>
-		    <input name="id_obat"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan ID Obat">
+		    <select class="form-control" name="id_obat">
+		    	<option value="">Pilih Obat</option>
+		    	@foreach($obat as $o )
+		    	<option value="{{$o->id_obat}}"> {{$o->nama_obat}}</option>
+		    	@endforeach
+		    </select>
 		  </div>
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Jumlah</label>
-		    <input name="jumlah"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Jumlah">
+		    <input name="jumlah"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Jumlah"  >
 		  </div>
 		
       </div>
@@ -82,5 +102,6 @@
       </div>
     </div>
   </div>
+            
  @endsection
  

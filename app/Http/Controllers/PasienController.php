@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\RekamMedis;
 
 class PasienController extends Controller
 {
      public function index()
      {
+     	RekamMedis::all();
      	$data_pasien = \App\Pasien:: all();
 		return view('pasien.pasien',['data_pasien' => $data_pasien]);
 	}
