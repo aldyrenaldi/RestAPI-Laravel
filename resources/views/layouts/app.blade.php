@@ -57,25 +57,25 @@
 
                       @can('manage-users')
                       <li class="nav-item">
-                        <a class="nav-link" href="/dokter">DOKTER</a>
+                        <a class="nav-link" href="/dokter">DEPARTEMEN</a>
+                      </li>
+                       <li class="nav-item">
+                        <a class="nav-link" href="/pasien">KARYAWAN</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/pasien">PASIEN</a>
+                        <a class="nav-link" href="/petugas">MITRA</a>
                       </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/petugas">PETUGAS</a>
-                      </li>
-                      <li class="nav-item">
+<!--                       <li class="nav-item">
                         <a class="nav-link" href="/obat">OBAT</a>
-                      </li>
+                      </li> -->
                       @endcan
                       <li class="nav-item">
                         <a class="nav-link" href="/rekammedis">REKAM MEDIS</a>
                       </li>
                       @can('manage-users')
-                      <li class="nav-item">
+<!--                       <li class="nav-item">
                         <a class="nav-link" href="/resepobat">RESEP OBAT</a>
-                      </li>
+                      </li> -->
                       @endcan
                        <li class="nav-item">
                         <a class="nav-link" href="#"> </a>

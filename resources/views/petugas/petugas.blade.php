@@ -17,22 +17,22 @@
 			<div class="col-6">
 				<br>
 				<br>
-				<h2>Data Petugas</h2>
+				<h2>Data Mitra</h2>
 			</div>
 			<div class="col-6">
 				<!-- Button trigger modal -->
 				<br>
 				<button type="button" class="btn btn-primary btn-sm float-right"  data-toggle="modal" data-target="#exampleModal">
-				  Tambah Data Petugas
+				  Tambah Data Mitra
 				</button>
 			</div>
 			
 				<table class='table table-hover'>
 					<tr>
-						<th>ID PETUGAS</th>
-						<th>NAMA LENGKAP</th>
+						<th>ID MITRA</th>
+						<th>NAMA MITRA</th>
 						<th>ALAMAT</th>
-						<th>KOTA TINGGAL</th>
+						<th>KOTA</th>
 						<th>NO TELEPON</th>
 						<th>STATUS</th>
 						<th>TOOLS</th>
@@ -64,7 +64,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Form Pengisian Data Petugas</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Form Pengisian Data Mitra</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -75,8 +75,8 @@
         	{{csrf_field()}}
 		    
 		  <div class="form-group">
-		    <label for="exampleInputEmail1">Nama Lengkap</label>
-		    <input name="nama_petugas"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Nama Lengkap">
+		    <label for="exampleInputEmail1">Nama Mitra</label>
+		    <input name="nama_petugas"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Nama Mitra">
 		  </div>
 		  <div class="form-group">
 		    <label for="exampleFormControlTextarea1">Alamat</label>

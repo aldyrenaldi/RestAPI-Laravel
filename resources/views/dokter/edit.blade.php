@@ -12,14 +12,14 @@
 			 <form action="/dokter/{{$dokter->id_dokter}}/update" method="POST">
         	{{csrf_field()}}
 		   <div class="form-group">
-		    <label for="exampleInputEmail1">ID Dokter</label>
-		    <input name="id_dokter" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan ID Dokter" value="{{$dokter->id_dokter}}" readonly="">
+		    <label for="exampleInputEmail1">ID Departemen</label>
+		    <input name="id_dokter" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan ID Departemen" value="{{$dokter->id_dokter}}" readonly="">
 		  </div>  
 		  <div class="form-group">
-		    <label for="exampleInputEmail1">Nama Lengkap</label>
-		    <input name="nama_dokter"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Nama Lengkap" value="{{$dokter->nama_dokter}}">
+		    <label for="exampleInputEmail1">Nama Departemen</label>
+		    <input name="nama_dokter"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Nama Departemen" value="{{$dokter->nama_dokter}}">
 		  </div>
-		  <div class="form-group">
+<!-- 		  <div class="form-group">
 		    <label for="exampleFormControlTextarea1">Alamat</label>
 		    <textarea name="alamat"class="form-control" id="exampleFormControlTextarea1" rows="3">{{$dokter->alamat}}</textarea>
 		  </div>
@@ -37,8 +37,8 @@
 		  </div>
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Status</label>
-		    <input name="status_dokter"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Status" value="{{$dokter->status_dokter}}">
-		  </div>
+		    <input name="status_dokter"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Status" value="{{$dokter->status_dokter}}"> -->
+		  <!-- </div> -->
 		          <button type="submit" class="btn btn-warning">Update</button>
         </form>
         </div>

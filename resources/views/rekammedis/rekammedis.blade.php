@@ -22,42 +22,40 @@
 			<div class="col-6">
 				<!-- Button trigger modal -->
 				<br>
+				  @can('manage-users')
 				<button type="button" class="btn btn-primary btn-sm float-right"  data-toggle="modal" data-target="#exampleModal">
 				  Tambah Data Rekam Medis
 				</button>
-			</div>
-			
+				@endcan
+			</div>			
 				<table class='table table-hover'>
 					<tr>
 						<th>ID REKAM MEDIS</th>
-						<th>NAMA PASIEN</th>
-						<th>NAMA DOKTER</th>
-						<th>NAMA PETUGAS</th>
+						<th>NAMA KARYAWAN</th>
+						<th>NAMA DEPARTEMEN</th>
+						<th>NAMA MITRA</th>
 						<th>TGL PERIKSA</th>
 						<th>DIAGNOSA</th>
 						<th>KETERANGAN</th>
 						<TH>BIAYA JASA</TH>
-						@can('manage-users')
 						<th>TOOLS</th>
-						@endcan
 					</tr>
 					@foreach($data_rekammedis as $rekammedis)
 					<tr>
 						<td>{{$rekammedis->id_rekammedis}}</td>
 						<td>{{$rekammedis->pasien->nama_pasien}}</td>
-						<td>{{$rekammedis->dokter->nama_dokter}}</td>
+						<td>{{$rekammedis->dokter['nama_dokter']}}</td>
 						<td>{{$rekammedis->petugas->nama_petugas}}</td>
 						<td>{{$rekammedis->tgl_periksa}}</td>
 						<td>{{$rekammedis->diagnosa}}</td>
 						<td>{{$rekammedis->keterangan}}</td>
 						<td>{{$rekammedis->biaya_jasa}}</td>
-						@can('manage-users')
 						<td>
-							<!--<a href="/rekammedis/{{$rekammedis->pasien->id_pasien}}/show" class="btn btn-primary btn-sm">Show</a> -->
+							@can('manage-users')
 							<a href="/rekammedis/{{$rekammedis->id_rekammedis}}/edit" class="btn btn-warning btn-sm">Edit</a>
 							<a href="/rekammedis/{{$rekammedis->id_rekammedis}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin?')">Hapus</a>
-						</td>
-						@endcan
+							@endcan
+							<a href="/rekammedis/downloadPDF/{{$rekammedis->id_rekammedis}}" class="btn btn-success btn-sm">Cetak</a>
 					</tr>
 				@endforeach
 				</table>
@@ -84,7 +82,7 @@
         	{{csrf_field()}}
 		    
 		  <div class="form-group">
-		    <label for="exampleInputEmail1">ID Pasien</label>
+		    <label for="exampleInputEmail1">ID Karyawan</label>
 		    <select class="form-control" name="id_pasien">
 		    	<option value="">Pilih Pasien</option>
 		    	@foreach($pasien as $p )
@@ -93,18 +91,18 @@
 		    </select>
 		  </div>
 		 <div class="form-group">
-		    <label for="exampleInputEmail1">ID Dokter</label>
+		    <label for="exampleInputEmail1">ID Departemen</label>
 		    <select class="form-control" name="id_dokter">
-		    	<option value="">Pilih Dokter</option>
+		    	<option value="">Pilih Departemen</option>
 		    	@foreach($dokter as $d )
 		    	<option value="{{$d->id_dokter}}"> {{$d->nama_dokter}}</option>
 		    	@endforeach
 		    </select>
 		  </div>
 		  <div class="form-group">
-		    <label for="exampleInputEmail1">ID Petugas</label>
+		    <label for="exampleInputEmail1">ID Mitra</label>
 		    <select class="form-control" name="id_petugas">
-		    	<option value="">Pilih Petugas</option>
+		    	<option value="">Pilih Mitra</option>
 		    	@foreach($petugas as $pe )
 		    	<option value="{{$pe->id_petugas}}"> {{$pe->nama_petugas}}</option>
 		    	@endforeach

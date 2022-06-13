@@ -71,7 +71,7 @@
                         <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
-
+                        
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
                         @endif
@@ -80,7 +80,7 @@
             @endif
 
             <div class="content">
-                <img class="masthead-avatar mb-5" src="rekammedis.jpg" alt="" />
+                <img class="masthead-avatar mb-5" src="rekammedis.jpg" href="/login" />
                 <div class="title m-b-md">
                     <!-- Laravel -->
                     REKAM MEDIS

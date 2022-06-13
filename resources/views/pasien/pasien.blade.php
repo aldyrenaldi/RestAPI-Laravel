@@ -17,13 +17,13 @@
 			<div class="col-6">
 				<br>
 				<br>
-				<h2>Data Pasien</h2>
+				<h2>Data Karyawan</h2>
 			</div>
 			<div class="col-6">
 				<!-- Button trigger modal -->
 				<br>
 				<button type="button" class="btn btn-primary btn-sm float-right"  data-toggle="modal" data-target="#exampleModal">
-				  Tambah Data Pasien
+				  Tambah Data Karyawan
 				</button>
 			</div>
 			
@@ -37,7 +37,7 @@
 						<th>ALAMAT</th>
 						<th>KOTA TINGGAL</th>
 						<th>NO TELEPON</th>
-						<th>PEKERJAAN</th>
+						<th>Departemen</th>
 						<th>TOOLS</th>
 					</tr>
 					@foreach($data_pasien as $pasien)
@@ -85,6 +85,10 @@
 		    <input name="nama_pasien"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Nama Lengkap">
 		  </div>
 		  <div class="form-group">
+		    <label for="exampleInputEmail1">Departemen</label>
+		    <input name="pekerjaan"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Departemen">
+		  </div>
+		  <div class="form-group">
 		    <label for="exampleInputEmail1">Tanggal Lahir</label>
 		    <input name="tgl_lahir" type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Tanggal Lahir">
 		  </div>
@@ -109,11 +113,10 @@
 		    <label for="exampleInputEmail1">Nomor Telepon</label>
 		    <input name="notelp_pasien" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Nomor Telepon">
 		  </div>
-		  <div class="form-group">
-		    <label for="exampleInputEmail1">Pekerjaan</label>
-		    <input name="pekerjaan"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Pekerjaan">
-		  </div>
+		  
 		
+
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

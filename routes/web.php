@@ -51,6 +51,7 @@ Route::get('/rekammedis/{id_rekammedis}/edit', 'RekamMedisController@edit');
 Route::get('/rekammedis/{id_rekammedis}/show', 'RekamMedisController@show');
 Route::post('/rekammedis/{id_rekammedis}/update', 'RekamMedisController@update');
 Route::get('/rekammedis/{id_rekammedis}/delete', 'RekamMedisController@delete');
+Route::get('/rekammedis/downloadPDF/{id_rekammedis}','RekamMedisController@downloadPDF');
 
 Route::get('/resepobat', 'ResepObatController@index');
 Route::post('/resepobat/create','ResepObatController@create');
@@ -61,7 +62,6 @@ Route::get('/resepobat/{id_resep}/delete', 'ResepObatController@delete');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){

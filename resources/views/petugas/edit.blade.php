@@ -1,7 +1,7 @@
 @extends('layouts.body')
 
 @section('konten')
-		<h1>Edit Data Petugas</h1>
+		<h1>Edit Data Mitra</h1>
 		@if(session('sukses'))
 			<div class="alert alert-success" role="alert">
 	  		 {{session('sukses')}}
@@ -12,11 +12,11 @@
 			 <form action="/petugas/{{$petugas->id_petugas}}/update" method="POST">
         	{{csrf_field()}}
 		   <div class="form-group">
-		    <label for="exampleInputEmail1">ID Petugas</label>
+		    <label for="exampleInputEmail1">ID Mitra</label>
 		    <input name="id_petugas" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan ID Petugas" value="{{$petugas->id_petugas}}" readonly="">
 		  </div>  
 		  <div class="form-group">
-		    <label for="exampleInputEmail1">Nama Lengkap</label>
+		    <label for="exampleInputEmail1">Nama Mitra</label>
 		    <input name="nama_petugas"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Nama Lengkap" value="{{$petugas->nama_petugas}}">
 		  </div>
 		  <div class="form-group">

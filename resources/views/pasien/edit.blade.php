@@ -1,7 +1,7 @@
 @extends('layouts.body')
 
 @section('konten')
-		<h1>Edit Data Pasien</h1>
+		<h1>Edit Data Karyawan</h1>
 		@if(session('sukses'))
 			<div class="alert alert-success" role="alert">
 	  		 {{session('sukses')}}
@@ -45,7 +45,7 @@
 		    <input name="notelp_pasien" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Nomor Telepon" value="{{$pasien->notelp_pasien}}">
 		  </div>
 		  <div class="form-group">
-		    <label for="exampleInputEmail1">Pekerjaan</label>
+		    <label for="exampleInputEmail1">Departemen</label>
 		    <input name="pekerjaan"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Pekerjaan" value="{{$pasien->pekerjaan}}">
 		  </div>
 		  

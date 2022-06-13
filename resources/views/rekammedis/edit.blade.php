@@ -17,7 +17,7 @@
 				    <input name="id_rekammedis" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan ID Rekam Medis" value="{{$rekammedis->id_rekammedis}}" readonly="">
 				  </div>  
 				<div class="form-group">
-				    <label for="exampleInputEmail1">ID Pasien</label>
+				    <label for="exampleInputEmail1">ID Karyawan</label>
 				    <select class="form-control" name="id_pasien">
 				    	<option value="">Pilih Pasien</option>
 				    	@foreach($pasien as $p )
@@ -26,7 +26,7 @@
 				    </select>
 				  </div>
 				 <div class="form-group">
-				    <label for="exampleInputEmail1">ID Dokter</label>
+				    <label for="exampleInputEmail1">ID Departemen</label>
 				    <select class="form-control" name="id_dokter">
 				    	<option value="">Pilih Dokter</option>
 				    	@foreach($dokter as $d )
@@ -35,7 +35,7 @@
 				    </select>
 				  </div>
 				  <div class="form-group">
-				    <label for="exampleInputEmail1">ID Petugas</label>
+				    <label for="exampleInputEmail1">ID Mitra</label>
 				    <select class="form-control" name="id_petugas">
 				    	<option value="">Pilih Petugas</option>
 				    	@foreach($petugas as $pe )
